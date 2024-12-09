@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>设置密码：</span>
+    <input type="text" onblur="password()">
+    <img src="" alt="">
+    <div></div>
+</body>
+<script>
+    function password() {
+        var inputElement = document.querySelector("input").value;
+        var img = document.querySelector("img")
+        var div =document.querySelector("div")
+        var inputlength = inputElement.length;
+        if(inputlength >= 6 && inputlength <= 16) {
+            img.setAttribute("src", "./images/right.png")
+            div.innerHTML = "密码正确"
+            div.style.display = "inline-block"
+        } else {
+            img.setAttribute("src", "./images/wrong.png")
+            div.innerHTML = "密码错误请重新输入"
+            div.style.display = "inline-block"
+        }
+    }
+</script>
+</html>
